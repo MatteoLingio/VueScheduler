@@ -1,5 +1,5 @@
 export default class Ts {
-  public static readonly workDay: object = [
+  public static readonly workDay: any[] = [
     '7:00',
     '8:00',
     '9:00',

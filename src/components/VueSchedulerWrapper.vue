@@ -11,6 +11,9 @@ import {
     Vue,
     Prop,
 } from 'vue-property-decorator';
+import {
+    mapMutations,
+} from 'vuex';
 import VueSchedulerDayPicker from './VueSchedulerDayPicker.vue';
 import VueSchedulerDayBody from './VueSchedulerDayBody.vue';
 
@@ -19,10 +22,18 @@ import VueSchedulerDayBody from './VueSchedulerDayBody.vue';
         VueSchedulerDayPicker,
         VueSchedulerDayBody,
     },
+    methods: mapMutations([
+        'setEvents',
+    ]),
 })
 
 export default class VueSchedulerWrapper extends Vue {
-    @Prop() public events!: [];
+    @Prop() public evs!: [];
+    public setEvents!: any;
+
+    private created() {
+        this.setEvents(this.evs);
+    }
 }
 </script>
 

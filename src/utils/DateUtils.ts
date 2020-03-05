@@ -7,7 +7,7 @@ export default class DateUtils {
     return `${date.getHours()}:00`;
   }
 
-  public static buildTimeMap(timeSlots: []): object {
+  public static buildTimeMap(timeSlots: any[]): object {
     const obj: any = {};
     timeSlots.forEach((timeSlot) => {
       obj[timeSlot] = [];

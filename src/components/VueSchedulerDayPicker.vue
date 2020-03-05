@@ -75,7 +75,7 @@ export default class VueSchedulerDayPicker extends Vue {
             current.setDate((current.getDate() - current.getDay()));
         }
         for (let i = 0; i < 7; i++) {
-            this.days.push(new Date(current));
+            this.days = [...this.days, (new Date(current))];
             direction === 'up' ? current.setDate(current.getDate() + 1) : current.setDate(current.getDate() - 1);
         }
 
